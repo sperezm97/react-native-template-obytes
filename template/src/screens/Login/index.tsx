@@ -1,11 +1,19 @@
 import React from 'react';
-import {Button, Screen, Input} from 'ui';
+import {Button, View, Input, Text} from 'ui';
 import {useAuth} from 'core';
 
 export const Login = () => {
   const {signIn} = useAuth();
   return (
-    <Screen>
+    <View
+      justifyContent="center"
+      flexDirection="column"
+      paddingHorizontal="m"
+      flex={1}
+      bg="background">
+      <Text variant="header" testID="title" textAlign="center">
+        Sing in
+      </Text>
       <Input name="firstName" label="First Name" placeholder="Your Name" />
       <Input name="lastName" label="Last Name" placeholder="Your Last  Name" />
       <Button
@@ -15,6 +23,6 @@ export const Login = () => {
         }}
         variant="secondary"
       />
-    </Screen>
+    </View>
   );
 };
